@@ -1,3 +1,7 @@
+#Li Xin
+#Student number: 014696390
+#xin.li@helsinki.fi
+
 import sys
 import socket
 import time
@@ -8,8 +12,6 @@ from _thread import *
 #parse arguments from the input
 config_file = sys.argv[1]
 line = sys.argv[2]
-#global variables
-
 
 #read the id and port from the config file
 def read_params(config_file):
@@ -39,7 +41,6 @@ def send_message(sender_id, receiver_port, lamport_clock):
 #start a new thread to open an socket for listening and send messages
 def client_thread(own_index, ids, ports):
 	#own_index indicates the index of current thread in the array ids[] and ports[]
-	#print(own_index, ids, ports)
 	lamport_clock = 0
 	event_count = 0
 
@@ -86,19 +87,14 @@ def client_thread(own_index, ids, ports):
 					timestamp = msg[2]
 
 					if int(sender_clock) > lamport_clock:
-						print("sender_clock > lamport_clock: " + sender_clock + " > " + str(lamport_clock))
 						lamport_clock = int(sender_clock) + 1
 					else:
 						lamport_clock = lamport_clock + 1
-					test = int(sender_clock)
-					print(type(test))
 					event_count = event_count + 1
 					f.write("r " + sender_id + " " + sender_clock + " " + str(lamport_clock) + "\n")
 				except:
 					print("Exception happened while receiving message")
 					continue
-
-		print("event, lamport_clock: " + str(event_count) + "  " + str(lamport_clock))
 
 	#close the socket, file, and poll object
 	poll.unregister(s.fileno())
@@ -106,20 +102,12 @@ def client_thread(own_index, ids, ports):
 	s.close()
 
 if __name__ == "__main__":
-    ids, ports = read_params(config_file)
+	ids, ports = read_params(config_file)
 
-    #loop for all the ids and create the socket listening
-    for i in range(0, len(ids)):
-    	print("concrrently start the client thread: " + str(i))
-    	start_new_thread(client_thread, (i, ids, ports))
-    	print(ids)
-    	print(ports)
-    time.sleep(50)
-
-
-
-
-
-    #def greetings(word1=first_arg, word2=second_arg):
-#   print("{} {}".format(word1, word2))
-
+	#loop for all the ids and create the socket listening
+	for i in range(0, len(ids)):
+		print("concrrently start the client thread: " + str(i))
+		start_new_thread(client_thread, (i, ids, ports))
+	#let the main thread sleep to wait the child client threads so that 
+	#the main thread won't exit while any of the client thread is still running
+	time.sleep(10)
