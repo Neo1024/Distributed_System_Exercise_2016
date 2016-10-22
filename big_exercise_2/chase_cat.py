@@ -13,9 +13,11 @@ if __name__ == "__main__":
 	f = open('listy_location', 'r')
 	listynode = f.readline()
 	f.close()
-	f = open('port_number', 'r')
-	listyport = f.readline()
-	mouseport = f.readline()
+	f = open('port_number', 'r') 
+	temp = f.readline().split()
+	listyport = temp[0]
+	temp = f.readline().split()
+	mouseport = temp[0]
 	f.close()
 
 	if (action == 'S'):
