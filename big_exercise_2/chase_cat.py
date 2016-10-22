@@ -25,9 +25,6 @@ if __name__ == "__main__":
 	else:
 		msg = 'MEOW'
 
-	listy = socket.socket()
-	listy.connect((listynode, int(listyport)))
-
 	s = socket.socket()
 	s.setblocking(False)
 	host = socket.gethostname()
@@ -40,10 +37,13 @@ if __name__ == "__main__":
 		time.sleep(8)
 
 	response = s.recv(1024).decode("utf8")
+	s.close()
 	#get the short name of ukko node
 	temp = str.split(searchnode, '.')
 	ukko = temp[0]
 	#send message to listy
+	listy = socket.socket()
+	listy.connect((listynode, int(listyport)))
 	if (response == 'OUCH'):
 		listy.send(bytes('G' + ukko + catname , 'utf8'))
 	else:
