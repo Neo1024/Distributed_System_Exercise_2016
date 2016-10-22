@@ -10,7 +10,7 @@ import os
 
 import mouse
 
-def send_mouse():
+def send_mouse(mouse_port):
 	command = 'ssh xgli@' + mouse_node + \
 		' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/mouse.py ' + mouse_port
 	os.system(command)
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 	#randomly choose a node to run mouse.py on a new thread
 	mouse_node = random.choice(ukkonodes)
 	#mouse.mouse(mouse_node, mouse_port)
-	mouse_thread = threading.Thread(target = mouse.mouse, args = (mouse_node, mouse_port))
+	mouse_thread = threading.Thread(target = send_mouse, args = (mouse_port, ))
 
 
 	print('program ends!')
