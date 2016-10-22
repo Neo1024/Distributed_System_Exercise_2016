@@ -30,8 +30,8 @@ if __name__ == "__main__":
 
 	s = socket.socket()
 	s.setblocking(False)
-	host = s.gethost()
-	s.connect((host, mouseport))
+	host = socket.gethostname()
+	s.connect((host, int(mouseport)))
 	s.send(bytes(msg, "utf8"))
 
 	if (action == 'S'):
