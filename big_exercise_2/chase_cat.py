@@ -9,7 +9,6 @@ if __name__ == "__main__":
 	#parse arguments from the input
 	action = sys.argv[1]
 	catname = sys.argv[2]
-	searchnode = sys.argv[3]
 
 	f = open('listy_location', 'r')
 	listynode = f.readline()
@@ -29,7 +28,8 @@ if __name__ == "__main__":
 
 	s = socket.socket()
 	s.setblocking(False)
-	s.connect((searchnode,mouseport))
+	host = s.gethost()
+	s.connect((host, mouseport))
 	s.send(bytes(msg, "utf8"))
 
 	if (action == 'S'):

@@ -2,7 +2,7 @@
 #Student number: 014696390
 #xin.li@helsinki.fi
 
-def function(host, port):
+def listy(host, port):
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.bind((host, port))
 	s.listen(5)
