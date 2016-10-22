@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
 	#send catty to search each node
 	for node in catty_nodes:
-		chase_thread = threaing.Thread(target = send_cat, args = ('S', 'Catty', node))
+		chase_thread = threading.Thread(target = send_cat, args = ('S', 'Catty', node))
 		chase_thread.start()
 
 	#send jazzy to search each node

@@ -24,7 +24,7 @@ if __name__ == "__main__":
 		msg = 'MEOW'
 
 	listy = socket.socket()
-	listy.connect((listynode, listyport))
+	listy.connect((listynode, int(listyport)))
 
 	s = socket.socket()
 	s.setblocking(False)
