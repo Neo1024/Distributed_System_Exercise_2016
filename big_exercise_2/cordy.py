@@ -76,4 +76,4 @@ if __name__ == "__main__":
 				loop = False
 
 		#check cmsg file every 2 seconds
-		time.sleep()
+		time.sleep(2)

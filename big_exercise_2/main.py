@@ -28,9 +28,9 @@ if __name__ == "__main__":
 	f = open('port_number', 'r')
 	lines = f.read().split('\n')
 	temp = lines[0].split()
-	listy_port = temp[1]
+	listy_port = temp[0]
 	temp = lines[1].split()
-	mouse_port = temp[1]
+	mouse_port = temp[0]
 	f.close()
 
 	#randomly choose a node to run mouse.py on a new thread
