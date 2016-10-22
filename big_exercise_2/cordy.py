@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
 	#send jazzy to search each node
 	for node in jazzy_nodes:
-		chase_thread = threaing.Thread(target = send_cat, args = ('S', 'Jazzy', node))
+		chase_thread = threading.Thread(target = send_cat, args = ('S', 'Jazzy', node))
 		chase_thread.start()
 
 	#check cmsg file every 2 seconds
