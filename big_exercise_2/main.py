@@ -10,6 +10,11 @@ import os
 
 import mouse
 
+def send_mouse():
+	command = 'ssh xgli@' + mouse_node + \
+		' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/mouse.py ' + mouse_port
+	os.system(command)
+
 if __name__ == "__main__":
 	#read the usable nodes from the config file
 	ukkonodes = open('ukkonodes', 'r').read().split('\n')
@@ -27,9 +32,7 @@ if __name__ == "__main__":
 	#randomly choose a node to run mouse.py on a new thread
 	mouse_node = random.choice(ukkonodes)
 	#mouse.mouse(mouse_node, mouse_port)
-	#mouse_thread = threading.Thread(target = mouse.mouse, args = (mouse_node, mouse_port))
-	command = 'ssh xgli@' + mouse_node + \
-		' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/mouse.py ' + mouse_port
-	os.system(command)
+	mouse_thread = threading.Thread(target = mouse.mouse, args = (mouse_node, mouse_port))
 
-	print('asynchronously')
+
+	print('program ends!')
