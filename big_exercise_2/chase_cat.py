@@ -35,8 +35,7 @@ if __name__ == "__main__":
 		s.send(bytes(msg, "utf8"))
 		response = s.recv(1024).decode("utf8")
 		#get the short name of ukko node
-		temp = str.split(searchnode, '.')
-		ukko = temp[0]
+		ukko = socket.gethostname()
 
 		#send message to listy
 		listy = socket.socket()

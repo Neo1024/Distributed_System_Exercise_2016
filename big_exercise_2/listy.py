@@ -22,9 +22,3 @@ def listy(host, port):
 
 		if msg[0] == 'G':
 			loop = False
-
-		#try:
-		#except:
-		#    print('Exception :\'(')
-		#    continue
-
