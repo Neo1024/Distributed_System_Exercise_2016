@@ -29,7 +29,7 @@ if __name__ == "__main__":
 	#mouse.mouse(mouse_node, mouse_port)
 	#mouse_thread = threading.Thread(target = mouse.mouse, args = (mouse_node, mouse_port))
 	command = 'ssh xgli@' + mouse_node + \
-		' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/mouse.py' + mouse_node + mouse_port
+		' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/mouse.py ' + mouse_port
 	os.system(command)
 
 	print('asynchronously')
