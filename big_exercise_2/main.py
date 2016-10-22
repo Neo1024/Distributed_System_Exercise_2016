@@ -33,6 +33,6 @@ if __name__ == "__main__":
 	mouse_node = random.choice(ukkonodes)
 	#mouse.mouse(mouse_node, mouse_port)
 	mouse_thread = threading.Thread(target = send_mouse, args = (mouse_port, ))
-
+	mouse_thread.start()
 
 	print('program ends!')
