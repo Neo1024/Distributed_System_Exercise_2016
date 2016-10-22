@@ -4,6 +4,7 @@
 
 import sys
 import socket
+import time
 
 if __name__ == "__main__":
 	#parse arguments from the input
@@ -27,27 +28,29 @@ if __name__ == "__main__":
 
 	s = socket.socket()
 	host = socket.gethostname()
-	s.connect((host, int(mouseport)))
-	s.send(bytes(msg, "utf8"))
+	print(host)
+	status = s.connect_ex((host, int(mouseport)))
+
+	if (status == 0):
+		s.send(bytes(msg, "utf8"))
+		response = s.recv(1024).decode("utf8")
+		#get the short name of ukko node
+		temp = str.split(searchnode, '.')
+		ukko = temp[0]
+
+		#send message to listy
+		listy = socket.socket()
+		listy.connect((listynode, int(listyport)))
+		if (response == 'OUCH'):
+			listy.send(bytes('G' + ukko + catname , 'utf8'))
+		else:
+			listy.send(bytes('F' + ukko + catname , 'utf8'))
+
+		s.close()
+		listy.close()
 
 	if (action == 'S'):
 		time.sleep(12)
 	else:
 		time.sleep(8)
-
-	s.setblocking(False)
-	response = s.recv(1024).decode("utf8")
-	s.close()
-	#get the short name of ukko node
-	temp = str.split(searchnode, '.')
-	ukko = temp[0]
-	#send message to listy
-	listy = socket.socket()
-	listy.connect((listynode, int(listyport)))
-	if (response == 'OUCH'):
-		listy.send(bytes('G' + ukko + catname , 'utf8'))
-	else:
-		listy.send(bytes('F' + ukko + catname , 'utf8'))
-
-	s.close()
-	listy.close()
+	print(status)

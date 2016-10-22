@@ -4,6 +4,7 @@
 
 import socket
 import sys
+import time
 
 if __name__ == "__main__":
 	#get port from the input
@@ -24,6 +25,6 @@ if __name__ == "__main__":
 			conn.close()
 		else:
 			time.sleep(6)
-			conn.send(bytes('OUCH'))
+			conn.send(bytes('OUCH', 'utf-8'))
 			conn.close()
 			loop = False
