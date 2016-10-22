@@ -14,17 +14,17 @@ def listy(host, port):
 	f.close()
 
 	while loop:
-        conn, addr = s.accept()
-        msg = conn.recv(1024).decode("utf8")
-        f = open('cmsg', 'a')
-        f.write(msg + '\n')
-        f.close()
+		conn, addr = s.accept()
+		msg = conn.recv(1024).decode("utf8")
+		f = open('cmsg', 'a')
+		f.write(msg + '\n')
+		f.close()
 
-        if msg[0] == 'G':
-        	loop = False
+		if msg[0] == 'G':
+			loop = False
 
-	    #try:
-	    #except:
-	    #    print('Exception :\'(')
-	    #    continue
+		#try:
+		#except:
+		#    print('Exception :\'(')
+		#    continue
 
