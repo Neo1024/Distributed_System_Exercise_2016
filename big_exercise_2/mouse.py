@@ -3,6 +3,7 @@
 #xin.li@helsinki.fi
 
 import socket
+import sys
 
 if __name__ == "__main__":
 	#get port from the input
