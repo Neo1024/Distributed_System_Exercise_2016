@@ -49,5 +49,3 @@ if __name__ == "__main__":
 
 	s.close()
 	listy.close()
-
-		
