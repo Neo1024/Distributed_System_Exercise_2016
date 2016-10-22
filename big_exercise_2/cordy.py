@@ -17,13 +17,13 @@ def send_cat(action, catname, search_node):
 def check_listy(previouse_lines):
 	with open('cmsg', 'r') as f:
 		i = 0
-        for line in f:
-            i = i + 1
-            #if new line is written, then return it
-            if(i > previouse_lines):
-            	temp = line.split('\n')
-            	return temp[0]
-    return ''
+		for line in f:
+			i = i + 1
+			#if new line is written, then return it
+			if(i > previouse_lines):
+				temp = line.split('\n')
+				return temp[0]
+	return ''
 
 if __name__ == "__main__":
 	#read the usable nodes from the config file
