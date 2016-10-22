@@ -22,7 +22,6 @@ def start_cordy():
 if __name__ == "__main__":
 	#read the usable nodes from the config file
 	ukkonodes = open('ukkonodes', 'r').read().split('\n')
-	print(ukkonodes)
 
 	#read the port of listy and mouse
 	f = open('port_number', 'r')
@@ -42,9 +41,13 @@ if __name__ == "__main__":
 	host = socket.gethostname()
 	listy_thread = threading.Thread(target = listy.listy, args = (host, listy_port))
 	listy_thread.start()
+	print(listy_port)
 
 	#start a new thread and run cordy.py on the same ukko node as main.py and listy.py
 	cordy_thread = threading.Thread(target = start_cordy)
 	cordy_thread.start()
 
+	listy_thread.join()
+	cordy_thread.join()
+	mouse_thread.join()
 	print('program ends!')
