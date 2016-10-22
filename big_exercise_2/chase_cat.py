@@ -26,7 +26,6 @@ if __name__ == "__main__":
 		msg = 'MEOW'
 
 	s = socket.socket()
-	s.setblocking(False)
 	host = socket.gethostname()
 	s.connect((host, int(mouseport)))
 	s.send(bytes(msg, "utf8"))
@@ -36,6 +35,7 @@ if __name__ == "__main__":
 	else:
 		time.sleep(8)
 
+	s.setblocking(False)
 	response = s.recv(1024).decode("utf8")
 	s.close()
 	#get the short name of ukko node
