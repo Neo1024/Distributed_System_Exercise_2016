@@ -6,6 +6,7 @@ import sys
 import socket
 import random
 import threading
+import os
 
 import mouse
 
