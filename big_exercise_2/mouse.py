@@ -17,8 +17,11 @@ if __name__ == "__main__":
 	loop = True
 
 	while loop:
+		print('mouse start to accept')
 		conn, addr = s.accept()
+		print('mouse start to recv')
 		msg = conn.recv(1024).decode("utf8")
+		print('mouse finish recv: ' + msg)
 
 		if msg == 'SEARCH':
 			conn.send(bytes('WOO', 'utf-8'))
