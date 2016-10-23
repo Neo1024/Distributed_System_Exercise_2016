@@ -9,14 +9,11 @@ import time
 if __name__ == "__main__":
 	#get port from the input
 	port = sys.argv[1]
-	f.write(port + 'enter')
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	host = socket.gethostname()
 	s.bind((host, int(port)))
 	s.listen(5)
-	f.write(port + 'binding')
-	f.close()
 	loop = True
 
 	while loop:
