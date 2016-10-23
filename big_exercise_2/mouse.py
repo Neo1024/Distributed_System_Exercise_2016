@@ -27,4 +27,5 @@ if __name__ == "__main__":
 			time.sleep(6)
 			conn.send(bytes('OUCH', 'utf-8'))
 			conn.close()
+			s.close()
 			loop = False
