@@ -33,5 +33,3 @@ def listy(host, port):
 		if msg[0] == 'G':
 			s.close()
 			loop = False
-
-listy(socket.gethostname(), 50000)
