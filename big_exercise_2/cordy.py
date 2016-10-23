@@ -9,8 +9,9 @@ import time
 
 def send_cat(action, catname, search_node):
 	#connect to remote ukko node by ssh and run chase_cat.py
+	print('action and catname and node::::' + action + catname + search_node)
 	command = 'ssh xgli@' + search_node + \
-			' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/chase_cat.py ' + action + catname
+			' python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/chase_cat.py ' + action + ' ' + catname
 	os.system(command)
 	
 
@@ -28,7 +29,6 @@ def check_listy(previouse_lines):
 if __name__ == "__main__":
 	#read the usable nodes from the config file
 	ukkonodes = open('ukkonodes', 'r').read().split('\n')
-	print(ukkonodes)
 	previouse_lines = 0
 	loop = True
 	finding_time = 0	#indicate how many times the mouse has been found
