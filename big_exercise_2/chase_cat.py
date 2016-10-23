@@ -41,9 +41,9 @@ if __name__ == "__main__":
 		listy = socket.socket()
 		listy.connect((listynode, int(listyport)))
 		if (response == 'OUCH'):
-			listy.send(bytes('G' + ukko + catname , 'utf8'))
+			listy.send(bytes('G ' + ukko + ' ' + catname , 'utf8'))
 		else:
-			listy.send(bytes('F' + ukko + catname , 'utf8'))
+			listy.send(bytes('F ' + ukko + ' ' + catname , 'utf8'))
 
 		s.close()
 		listy.close()
