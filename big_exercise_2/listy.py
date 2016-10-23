@@ -12,7 +12,8 @@ def listy(host, port):
 		s.listen(5)
 		loop = True
 	except Exception:
-		print(traceback.print_exc()) 
+		print(traceback.print_exc())
+		loop = False
 
 	#create cmsg file or clear the previous content of it
 	f = open('cmsg', 'w')
