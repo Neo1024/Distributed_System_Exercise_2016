@@ -21,4 +21,5 @@ def listy(host, port):
 		f.close()
 
 		if msg[0] == 'G':
+			s.close()
 			loop = False
