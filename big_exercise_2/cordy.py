@@ -36,7 +36,7 @@ if __name__ == "__main__":
 	#choose a pivot to devide the ukko nodes into two parts for two cats
 	pivot = math.floor(len(ukkonodes)/2)
 	catty_nodes = ukkonodes[0:pivot]
-	jazzy_nodes = ukkonodes[pivot:len(ukkonodes) - 1]
+	jazzy_nodes = ukkonodes[pivot:len(ukkonodes)]
 
 	#send catty to search each node
 	for node in catty_nodes:

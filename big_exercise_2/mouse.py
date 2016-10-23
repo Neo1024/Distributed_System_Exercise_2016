@@ -14,6 +14,7 @@ if __name__ == "__main__":
 	host = socket.gethostname()
 	s.bind((host, int(port)))
 	s.listen(5)
+	print('non blocking')
 	loop = True
 
 	while loop:
