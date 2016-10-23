@@ -24,11 +24,10 @@ def listy(host, port):
 			msg = conn.recv(1024).decode("utf8")
 			f = open('cmsg', 'a')
 			f.write(msg + '\n')
+			f.close()
 		except Exception:
 			print(traceback.print_exc())
-		finally:
-			f.close()
-			s.close()
+			loop = False
 
 		if msg[0] == 'G':
 			s.close()
