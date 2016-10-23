@@ -14,7 +14,7 @@ if __name__ == "__main__":
 	f = open('/cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/listy_location', 'r')
 	listynode = f.readline()
 	f.close()
-	f = open('port_number', 'r') 
+	f = open('/cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/port_number', 'r') 
 	temp = f.readline().split()
 	listyport = temp[0]
 	temp = f.readline().split()
