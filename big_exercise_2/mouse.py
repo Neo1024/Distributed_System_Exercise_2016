@@ -9,7 +9,6 @@ import time
 if __name__ == "__main__":
 	#get port from the input
 	port = sys.argv[1]
-	f = open('/cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_2/mouse_output', 'w')
 	f.write(port + 'enter')
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -21,7 +20,6 @@ if __name__ == "__main__":
 	loop = True
 
 	while loop:
-		print('mouse start to accept')
 		conn, addr = s.accept()
 		print('mouse start to recv')
 		msg = conn.recv(1024).decode("utf8")

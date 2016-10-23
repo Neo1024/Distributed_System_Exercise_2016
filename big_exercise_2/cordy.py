@@ -66,10 +66,10 @@ if __name__ == "__main__":
 				if (finding_time == 1):
 					node = temp[1] + '.hpc.cs.helsinki.fi'
 					if (temp[2] == 'Catty'):
-						chase_thread = threading.Thread(target = send_cat, args = ('A', 'Jazzy', node))
+						chase_thread = threading.Thread(target = send_cat, args = ('S', 'Jazzy', node))
 						chase_thread.start()
 					else:
-						chase_thread = threading.Thread(target = send_cat, args = ('A', 'Catty', node))
+						chase_thread = threading.Thread(target = send_cat, args = ('S', 'Catty', node))
 						chase_thread.start()
 			#if message of catching the mouse
 			else:
