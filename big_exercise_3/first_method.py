@@ -23,7 +23,7 @@ def first_method(base_num):
 	if (random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) < 2):
 		class_id = class_id + 1000
 
-	print(magic_number)
+	print(class_id)
 
 if __name__ == "__main__":
 	first_method(base_num)
