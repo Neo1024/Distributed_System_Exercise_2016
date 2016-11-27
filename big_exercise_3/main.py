@@ -18,8 +18,7 @@ if __name__ == "__main__":
 	############# First Method #############
 	
 	# running the first method in 1T/nH/1S model
-	# results = []
-	# distinct_res = []
+	results = []
 
 	#remotely running first method on ukko050 - 054 and save the results
 	for i in range(50, 55):
