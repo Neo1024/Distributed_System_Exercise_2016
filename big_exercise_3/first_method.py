@@ -17,7 +17,7 @@ def first_method(base_num):
 	magic_number = 1024
 
 	#correct class_id
-	class_id = base_num % 9 + magic_number
+	class_id = int(base_num) % 9 + magic_number
 
 	# 10% possibility introduce a latent fault
 	if (random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) < 2):
