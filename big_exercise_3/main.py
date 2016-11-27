@@ -24,10 +24,11 @@ if __name__ == "__main__":
 	for i in range(50, 55):
 		ukkonode = 'xgli@ukko0' + str(i) + '.hpc.cs.helsinki.fi '
 		comm = 'ssh ' + ukkonode + 'python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_3/first_method.py ' \
-			+ str(base_num)
+			+ str(base_num) + ' > id.txt'
 		os.system(comm)
 		f = open('id.txt', 'r')
-		results.append(f.read())
+		print(f.read())
+		#results.append(f.read())
 
 	#a simple decision algorithm: choose the result which appears the most times in results[]
 	results_count = Counter(results)
