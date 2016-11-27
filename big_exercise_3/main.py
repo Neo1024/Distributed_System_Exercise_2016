@@ -24,7 +24,7 @@ if __name__ == "__main__":
 	for i in range(50, 55):
 		ukkonode = 'xgli@ukko0' + str(i) + '.hpc.cs.helsinki.fi '
 		comm = 'ssh ' + ukkonode + 'python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_3/first_method.py ' \
-			+ str(base_num) + ' > id.txt'
+			+ str(base_num)
 		os.system(comm)
 		f = open('id.txt', 'r')
 		results.append(f.read())
