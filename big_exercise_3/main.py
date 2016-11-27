@@ -36,7 +36,7 @@ if __name__ == "__main__":
 	#a simple decision algorithm: choose the result which appears the most times in results[]
 	results_count = Counter(results)
 	top = results_count.most_common(1)
-	temp = results_count[0]
+	temp = top[0]
 	print(results_count)
 	print(top)
 	print(temp)
