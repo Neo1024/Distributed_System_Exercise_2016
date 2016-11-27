@@ -20,7 +20,7 @@ if __name__ == "__main__":
 	# running the first method in 1T/nH/1S model
 	results = []
 
-	#remotely running first method on ukko050 - 054 and save the results
+	#remotely running first method on ukko092 - 094 and save the results
 	for i in range(92, 94):
 		ukkonode = 'xgli@ukko0' + str(i) + '.hpc.cs.helsinki.fi '
 		comm = 'ssh ' + ukkonode + 'python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_3/first_method.py ' \
