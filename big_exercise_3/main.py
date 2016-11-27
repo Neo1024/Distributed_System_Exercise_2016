@@ -33,8 +33,9 @@ if __name__ == "__main__":
 	results_count = Counter(results)
 	top = results_count.most_common(1)
 	temp = results_count[0]
-	print('top: ' + top)
-	print('temp: ' + temp)
+	print(results_count)
+	print(top)
+	print(temp)
 	result_1 = temp[0]
 	print('the class id is: ' + result_1)
 
