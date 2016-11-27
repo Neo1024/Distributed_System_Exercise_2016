@@ -33,7 +33,6 @@ if __name__ == "__main__":
 	results_count = Counter(results)
 	top = results_count.most_common(1)
 	temp = results_count[0]
-	print('results_count: ' + results_count)
 	print('top: ' + top)
 	print('temp: ' + temp)
 	result_1 = temp[0]
