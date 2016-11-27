@@ -9,6 +9,7 @@ import sys
 import second_method
 import third_method
 from collections import Counter
+import os
 
 #the input base number used for generating the class_id, which simulates the input data
 base_num = sys.argv[1]
@@ -23,8 +24,7 @@ if __name__ == "__main__":
 	#remotely running first method on ukko050 - 054 and save the results
 	for i in range(50, 55):
 		ukkonode = 'xgli@ukko0' + str(i) + '.hpc.cs.helsinki.fi '
-		comm = 'ssh ' + ukkonode + 'python3 first_method.py ' 
-				+ str(base_num) + ' > id.txt'
+		comm = 'ssh ' + ukkonode + 'python3 first_method.py ' + str(base_num) + ' > id.txt'
 		os.system(comm)
 		f = open('id.txt', 'r')
 		results.append(f.read())
