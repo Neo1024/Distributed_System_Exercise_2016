@@ -27,8 +27,10 @@ if __name__ == "__main__":
 			+ str(base_num) + ' > id.txt'
 		os.system(comm)
 		f = open('id.txt', 'r')
-		print(f.read())
-		#results.append(f.read())
+		lines = f.read().split('\n')
+		temp = lines[0].split()
+		r = temp[0]
+		results.append(r)
 
 	#a simple decision algorithm: choose the result which appears the most times in results[]
 	results_count = Counter(results)
