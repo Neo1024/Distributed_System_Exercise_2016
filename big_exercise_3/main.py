@@ -21,13 +21,15 @@ if __name__ == "__main__":
 	results = []
 
 	#remotely running first method on ukko050 - 054 and save the results
-	for i in range(50, 55):
+	for i in range(91, 94):
 		ukkonode = 'xgli@ukko0' + str(i) + '.hpc.cs.helsinki.fi '
 		comm = 'ssh ' + ukkonode + 'python3 /cs/home/xgli/Distributed_System_Exercise_2016/big_exercise_3/first_method.py ' \
 			+ str(base_num) + ' > id.txt'
 		os.system(comm)
 		f = open('id.txt', 'r')
-		r = f.read().split('\n')
+		lines = f.read().split('\n')
+		temp = lines[0].split()
+		r = temp[0]
 		results.append(r)
 	print(results)
 
