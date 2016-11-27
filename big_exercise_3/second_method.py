@@ -1,3 +1,4 @@
+
 #Second method has 10% possibility to introduce a fault by making class id not fulfill the 
 #length restriction which could be detected by the main program. Although the main program 
 #doesn't know how the class id is generated, but it does know the class id 
@@ -7,13 +8,13 @@
 
 import random
 
-def first_method(base_num):
+def second_method(base_num):
 	magic_number = 1024
 
-	class_id = base_num % 9 + magic_number
+	class_id = int(base_num) % 9 + magic_number
 
 	# 10% possibility introduce a fault that can be detected by the main program
 	if (random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) < 2):
 		class_id = class_id * 10
 
-	return magic_number
+	return class_id

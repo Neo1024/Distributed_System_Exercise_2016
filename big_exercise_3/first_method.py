@@ -1,11 +1,12 @@
+
 #first method has 10% introduce an fault, which remains latent until doing multi-computation 
-#on different ukko nodes and use decision algorithms to choose a result from the returning results. 
+#on different ukko nodes and use a decision algorithm to choose a result from the returning results. 
 #This situation is designed to simulate the possible fault caused by hardware failures, which could be solved by 
 #doing multi-computation in hardware dimension simultaneously (1T/nH/1S) 
 
-#the correct way to generate an class id based on the input number like this: base_num % 9 + magic_number, which 
-#generates a four digit class id
-#the rule of generating class id here is very simple because it's just in need for the illustration the threefold model
+#the correct way to generate an class id based on the input number like this: base_num % 9 + magic_number, which generates 
+#a four digit class id. The rule of generating class id here is very simple because it's just in need for 
+#the illustration the threefold model
 
 import random
 import sys
